@@ -1,0 +1,13 @@
+home/.atom/*
+#home/.atom/.apm/
+#home/.atom/.atom-socket*
+#home/.atom/blob-store/
+#home/.atom/compile-cache/
+#home/.atom/.node-gyp/
+#home/.atom/github.cson
+#home/.atom/packages/
+#home/.atom/storage/
+#home/.atom/nohup.out
+#home/.atom/package-lock.json
+!home/.atom/package.list
+!home/.atom/config.cson

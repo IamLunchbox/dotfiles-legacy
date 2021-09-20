@@ -1,0 +1,53 @@
+general {
+        output_format = "i3bar"
+        colors = false
+        markup = pango
+        interval = 5
+        color_good = '#2f343f'
+		color_degraded = '#ebcb8b'
+		color_bad = '#ba5e57'
+}
+
+order += "load"
+order += "disk /"
+order += "ethernet eth0"
+order += "path_exists VPN"
+order += "volume master"
+order += "tztime local"
+
+load {
+        format = "<span background='#f59335'>  %5min Load </span>"
+}
+
+disk "/" {
+        format = "<span background='#fec7cd'>  %free Free </span>"
+}
+
+
+ethernet eth0 {
+        format_up = "<span background='#88c0d0'>  %ip </span>"
+        format_down = "<span background='#88c0d0'>  Disconnected </span>"
+}
+
+path_exists VPN {
+	path = "/proc/sys/net/ipv4/conf/tun0/"
+        format = "<span background='#3bc480'> %title </span>"
+        format_down = "<span background='#99ccff'> Disconnected </span>"
+	#format_down = "<span background='#88c0d0'>  tun0 off </span>"
+
+}
+
+
+volume master {
+        format = "<span background='#ebcb8b'>  %volume </span>"
+        format_muted = "<span background='#ebcb8b'>  Muted </span>"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+tztime local {
+		format = "<span background='#81a1c1'> %time </span>"
+		format_time = "%a %-d %b %H:%M"
+}
+

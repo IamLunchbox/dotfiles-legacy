@@ -1,0 +1,50 @@
+- defaults:
+    link:
+      relink: true
+
+- create:
+    $HOME/Repos:
+      mode: 0750
+    $HOME/.ssh:
+      mode: 0700
+    $HOME/.atom:
+      mode: 0750
+    $HOME/.config:
+      mode: 0750
+
+- link:
+    $HOME/.tmux.conf: 
+      path: home/.tmux.conf
+    $HOME/.config/: 
+      glob: true
+      path: home/.config/*
+      force: true       
+    $HOME/.zshrc: 
+      force: true
+      path: home/.zshrc
+    $HOME/.zshenv: 
+      force: true
+      path: home/.zshenv
+    $HOME/.nanorc: home/.nanorc
+    $HOME/.nano: 
+      force: true
+      path: home/.nano
+    $HOME/.wallpaper.png: home/.wallpaper.png
+    $HOME/.atom/package.list:
+      path: home/.atom/package.list
+      force: true
+    $HOME/.atom/config.cson:
+      path: home/.atom/config.cson
+      force: true
+      
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - [if command -v apm 2>&1 1>/dev/null; then apm install --packages-file $HOME/.atom/package.list; fi]
+  - [if $(uname -rv | grep -qi "kali"); then rm $HOME/.nanorc; ln -s $(realpath ./home/.nanorc-kali) $HOME/.nanorc; fi]    
+
+- clean:
+    $HOME/:
+      force: true
+    $HOME/.config:
+      recursive: true
+

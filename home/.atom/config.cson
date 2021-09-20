@@ -1,0 +1,29 @@
+"*":
+  "autocomplete-python":
+    outputDebug: true
+    outputProviderErrors: true
+    useKite: false
+  "autocomplete-python-jedi":
+    outputDebug: true
+    outputProviderErrors: true
+  core:
+    audioBeep: false
+    autoHideMenuBar: true
+    disabledPackages: [
+      "spell-check"
+      "wrap-guide"
+      "welcome"
+      "styleguide"
+    ]
+    projectHome: "$HOME/Repos"
+    telemetryConsent: "no"
+  editor:
+    defaultFontSize: 16
+    fontSize: 16
+    showIndentGuide: true
+  "exception-reporting":
+    userId: "ea648248-0abf-48d4-9cc2-6dd645f04d21"
+  welcome:
+    showOnStartup: false
+  zentabs:
+    neverCloseUnsaved: true

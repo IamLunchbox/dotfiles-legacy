@@ -1,0 +1,13 @@
+set autoindent
+set softwrap
+set linenumbers
+set tabstospaces
+set morespace
+set titlecolor white,magenta
+set keycolor cyan
+set functioncolor cyan
+set numbercolor yellow
+set tabsize 4
+include ~/.nano/*.nanorc
+
+bind ^H chopwordleft main
