@@ -15,6 +15,9 @@
       "welcome"
       "styleguide"
     ]
+    packagesWithKeymapsDisabled: [
+      "github"
+    ]
     projectHome: "$HOME/Repos"
     telemetryConsent: "no"
   editor:
@@ -23,6 +26,18 @@
     showIndentGuide: true
   "exception-reporting":
     userId: "ea648248-0abf-48d4-9cc2-6dd645f04d21"
+  minimap:
+    plugins:
+      codeglance: false
+      codeglanceDecorationsZIndex: 0
+      cursorline: false
+      cursorlineDecorationsZIndex: 0
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
+      "git-diff": false
+      "git-diffDecorationsZIndex": 0
+      "minimap-hide": false
+      "minimap-hideDecorationsZIndex": 0
   welcome:
     showOnStartup: false
   zentabs:
