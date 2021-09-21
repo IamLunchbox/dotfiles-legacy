@@ -1,7 +1,6 @@
 "*":
   "autocomplete-python":
-    outputDebug: true
-    outputProviderErrors: true
+    fuzzyMatcher: false
     useKite: false
   "autocomplete-python-jedi":
     outputDebug: true
