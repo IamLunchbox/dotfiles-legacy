@@ -21,10 +21,8 @@
     telemetryConsent: "no"
   editor:
     defaultFontSize: 16
-    fontSize: 16
+    fontSize: 17
     showIndentGuide: true
-  "exception-reporting":
-    userId: "ea648248-0abf-48d4-9cc2-6dd645f04d21"
   minimap:
     plugins:
       codeglance: false
