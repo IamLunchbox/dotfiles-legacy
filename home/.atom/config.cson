@@ -23,6 +23,8 @@
     defaultFontSize: 16
     fontSize: 17
     showIndentGuide: true
+  "exception-reporting":
+    userId: "98d93b2c-f916-49f1-9e1f-1270e8d4b971"
   minimap:
     plugins:
       codeglance: false
