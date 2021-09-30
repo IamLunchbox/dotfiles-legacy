@@ -32,7 +32,7 @@ select-word-style bash
 alias ls="ls --color=always"
 alias ll="ls -la1"
 alias grep="grep --color=always"
-alias testssl="~/Repos/testssl.sh/testssl.sh -p -e -f --color 0 --mapping no-openssl --openssl /usr/bin/openssl"
+alias testssl="~/Repos/testssl.sh/testssl.sh --openssl /usr/bin/openssl"
 alias nmap-fast="sudo nmap -sS -A -Pn -p-"
 alias testssl-update="current_dir=$(pwd); if [[ ! -d ~/Repos/testssl.sh ]]; then cd ~/Repos && git clone https://github.com/drwetter/testssl.sh.git; else cd ~/Repos/testssl.sh && git pull; fi; cd ${current_dir}"
 alias apm-backup="apm list --installed --bare > ~/.atom/package.list"
