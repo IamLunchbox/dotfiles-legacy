@@ -147,7 +147,7 @@ default_border pixel 3
 
 # colour of border, background, text, indicator, and child_border
 #client.focused              #ab1503a #2f343f #d8dee8 #bf616a #ab1503
-client.focused              #2f343f #2f343f #d8dee8 #93a6ec #6681e4
+client.focused              #2f343f #2f343f #d8dee8 #becaf4 #7d94e8
 client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f
