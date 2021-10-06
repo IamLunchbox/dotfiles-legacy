@@ -1,7 +1,7 @@
 Hydrogen@2.16.3
 autocomplete-python@1.17.0
 minimap@4.40.0
-minimap-find-and-replace@5.0.9
+minimap-cursorline@1.0.5
 minimap-git-diff@4.3.6
 monokai@0.28.0
 zentabs@0.8.9
