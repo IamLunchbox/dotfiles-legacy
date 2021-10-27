@@ -1,6 +1,7 @@
 # Workaround against starting percentage sign before the PS1
 unsetopt PROMPT_SP
-setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+# delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_expire_dups_first
 setopt hist_ignore_dups       # ignore duplicated commands history list
 setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
@@ -27,15 +28,6 @@ autoload -U compinit && compinit
 # use bash style word selection, honoring / and -
 autoload -U select-word-style
 select-word-style bash
-
-# my favorite aliases
-alias ls="ls --color=always"
-alias ll="ls -la1"
-alias grep="grep --color=always"
-alias testssl="~/Repos/testssl.sh/testssl.sh --openssl /usr/bin/openssl"
-alias nmap-fast="sudo nmap -sS -A -Pn -p-"
-alias testssl-update="current_dir=$(pwd); if [[ ! -d ~/Repos/testssl.sh ]]; then cd ~/Repos && git clone https://github.com/drwetter/testssl.sh.git; else cd ~/Repos/testssl.sh && git pull; fi; cd ${current_dir}"
-alias apm-backup="apm list --installed --bare > ~/.atom/package.list"
 
 # Keybindings, pretty self explanatory
 # If one keybinding behaves unexpected, use ctrl+v or cat -v to investigate
@@ -70,8 +62,14 @@ elif [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlightin
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 fi
 
-if [[ -f "$HOME/.aliases" ]]; then
 source $HOME/.aliases
+if [[ -f "$HOME/.local-aliases" ]]; then
+source $HOME/.local-aliases
+fi
+if [[ -h "$HOME/.zsh-functions" ]]; then
+  for func in $HOME/.zsh-functions/*; do
+  source $func;
+  done
 fi
 
 umask 0027

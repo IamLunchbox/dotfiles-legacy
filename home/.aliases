@@ -1,0 +1,5 @@
+alias ls="ls --color=always"
+alias ll="ls -la1"
+alias grep="grep --color=always"
+alias nmap-fast="sudo nmap -sS -A -Pn -p-"
+alias apm-backup="apm list --installed --bare > ~/.atom/package.list"

@@ -1,0 +1,36 @@
+function testssl-report() { 
+set -u
+$HOME/Repos/testssl.sh/testssl.sh -p -e -f --color 0 --openssl /usr/bin/openssl --mapping no-openssl "$1" | sed -r 's/^ x[0-9a-f]{2,}[ ]{3,}([^ ]*).*/\1/' | sed -r 's/^-{90}/-------------/' | sed 's/Hexcode.*/Cipher Suites/'
+set +u
+}
+
+function testssl-update() {
+set -u
+current_dir=$(pwd)
+if [[ ! -d $HOME/Repos/testssl.sh ]]; then 
+  cd ~/Repos
+  git clone https://github.com/drwetter/testssl.sh
+else 
+  cd ~/Repos/testssl.sh && git pull
+fi
+cd ${current_dir}
+set +u
+}
+
+
+function testssl() {
+set -u
+if [[ -d $HOME/Repos/testssl.sh ]]; then
+  $HOME/Repos/testssl.sh/testssl.sh --openssl /usr/bin/openssl
+else
+  echo -n "$HOME/Repos/testssl.sh does not seem to exist.
+Do you want to create it now? [Y/N] "
+  read confirm
+  if [[ $confirm =~ [Yy]{1} ]]; then
+    testssl-update
+  else
+    echo "Aborting"
+  fi
+fi
+set +u
+}

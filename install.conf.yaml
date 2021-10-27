@@ -22,9 +22,9 @@
     $HOME/.zshrc: 
       force: true
       path: home/.zshrc
-    $HOME/.zshenv: 
+    $HOME/.zsh-functions: 
       force: true
-      path: home/.zshenv
+      path: home/.zsh-functions
     $HOME/.nanorc: 
       path: ./home/.nanorc
     $HOME/.nano: 
@@ -41,7 +41,7 @@
   - [git submodule update --init --recursive, Installing submodules]
   - [if command -v apm 2>&1 1>/dev/null; then apm install --packages-file $HOME/.atom/package.list; fi]
   - [if $(uname -rv | grep -qi "kali"); then rm $HOME/.nanorc; ln -s $(realpath ./home/.nanorc-kali) $HOME/.nanorc; fi]    
-  - [if $(uname -rv | grep -qi "kali"); then ln -s $(realpath ./home/wallpapers-kali)/.* $HOME/; else ln -s $(realpath ./home/wallpapers)/.* $HOME/; fi]    
+  - [if $(uname -rv | grep -qi "kali"); then rm $HOME/.wallpaper*; ln -s $(realpath ./home/wallpapers-kali)/.* $HOME/; else rm $HOME/.wallpaper*; ln -s $(realpath ./home/wallpapers)/.* $HOME/; fi]    
   - [if $(uname -rv | grep -qi "kali"); then rm $HOME/.config/i3/config; ln -s $(realpath ./home/.config/i3/config-kali) $HOME/.config/i3/config; fi]    
 
 - clean:
