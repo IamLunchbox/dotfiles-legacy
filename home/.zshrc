@@ -62,7 +62,9 @@ elif [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlightin
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 fi
 
+if [[ -f "$HOME/.aliases" ]]; then
 source $HOME/.aliases
+fi
 if [[ -f "$HOME/.local-aliases" ]]; then
 source $HOME/.local-aliases
 fi

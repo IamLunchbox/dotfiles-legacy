@@ -12,8 +12,8 @@ font pango: Noto Sans 10
 floating_modifier $super+$alt
 
 #autostart
-exec --no-startup-id hsetroot -center ~/.wallpaper$(( $RANDOM %5 )).jpg
-exec --no-startup-id clipit -nd
+exec --no-startup-id feh --bg-fill --randomize ~/.wallpaper*
+exec --no-startup-id clipit -n
 exec --no-startup-id xsettingsd &
 exec --no-startup-id compton -b
 exec --no-startup-id nm-applet

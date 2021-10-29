@@ -26,10 +26,13 @@
       force: true
       path: home/.zsh-functions
     $HOME/.nanorc: 
-      path: ./home/.nanorc
+      path: home/.nanorc
     $HOME/.nano: 
       force: true
       path: home/.nano
+    $HOME/.aliases:
+      force: true
+      path: home/.aliases
     $HOME/.atom/package.list:
       path: home/.atom/package.list
       force: true
