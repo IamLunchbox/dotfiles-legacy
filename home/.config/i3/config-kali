@@ -150,6 +150,7 @@ for_window [title="request to http*" class="*-burp-StartBurp"] floating enable
 for_window [title="Edit crawl and audit scan" class="*burp-StartBurp"] floating enable
 for_window [class="Chromium-browser"] floating enable
 for_window [title="*Intruder attack " class="*-burp-StartBurp"] floating enable
+for_window [class="Org.gnome.clocks"] floating enable
 
 # borders
 hide_edge_borders none
