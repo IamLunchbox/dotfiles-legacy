@@ -144,8 +144,9 @@ bar {
 # window rules, you can find the window class using xprop
 for_window [title="Intruder attack of *" class="*-burp-StartBurp"] floating enable
 for_window [title="New scan" class="*-burp-StartBurp"] floating enable
-for_window [title="New live task*" class="*-burp-StartBurp"] floating enable
 for_window [title="Live audit from*" class="*-burp-StartBurp"] floating enable
+for_window [title="New live task*" class="*-burp-StartBurp"] floating enable
+for_window [title="CSRF PoC generator" class="*-burp-StartBurp"] floating enable
 for_window [title="request to http*" class="*-burp-StartBurp"] floating enable
 for_window [title="Edit crawl and audit scan" class="*burp-StartBurp"] floating enable
 for_window [class="Chromium-browser"] floating enable
@@ -153,6 +154,7 @@ for_window [title="*Intruder attack " class="*-burp-StartBurp"] floating enable
 for_window [class="Org.gnome.clocks"] floating enable
 
 # borders
+#
 hide_edge_borders none
 default_border pixel 3
 
