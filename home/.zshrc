@@ -19,8 +19,8 @@ TERM="xterm-256color"
 #PS1="%{$fg[yellow]%}%n@%m %{$fg[magenta]%}%~ :  %{$reset_color%}% "
 
 # Longer one with date and hostname, but no line break
-PS1='%B%F{243}%D{%d-%m-%Y}/%B%F{243}%* %B%F{166}%n@%m %B%F{12}%~%B%F{12}: %b%F{reset}'
-
+PS1=$'%F{166}%d%f\n%F{243}%n@%M%f%(!. %B%F{red}#%b%f.%F{243}:%f)%f '
+RPROMPT='%(?.%B%F{green}√%b%f.%B%F{red}✗%b%?%f)'
 # highlighting of selected menu itmes when using autocomplete
 zstyle ':completion:*' menu select
 autoload -U compinit && compinit
