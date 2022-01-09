@@ -1,0 +1,12 @@
+dotfiles(){
+	cd $HOME
+	if [[ ! -d .dotfiles ]]; then
+		git clone https://github.com/IamLunchbox/dotfiles .dotfiles
+		cd .dotfiles
+		./install
+	else
+		cd $HOME/.dotfiles
+		git pull
+		./install
+	fi
+}
