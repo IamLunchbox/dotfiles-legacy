@@ -1,12 +1,15 @@
 dotfiles(){
+	source="$(pwd)"
 	cd $HOME
 	if [[ ! -d .dotfiles ]]; then
 		git clone https://github.com/IamLunchbox/dotfiles .dotfiles
 		cd .dotfiles
 		./install
+		cd "$source"
 	else
 		cd $HOME/.dotfiles
 		git pull
 		./install
+		cd "$source"
 	fi
 }
