@@ -1,5 +1,7 @@
 alias ls="ls --color=always"
-alias ll="ls -lA1"
+alias ll="ls -lA1hr"
 alias grep="grep --color=always"
 alias nmap-fast="sudo nmap -sS -A -Pn -p-"
 alias apm-backup="apm list --installed --bare > ~/.atom/package.list"
+alias vim="rvim"
+alias view="rview"
