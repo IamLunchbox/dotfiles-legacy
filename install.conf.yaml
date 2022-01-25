@@ -5,6 +5,8 @@
 - create:
     $HOME/Repos:
       mode: 0750
+    $HOME/Pictures/Screenshots:
+      mode: 0750
     $HOME/.ssh:
       mode: 0700
     $HOME/.atom:
@@ -27,9 +29,6 @@
       path: home/.zsh-functions
     $HOME/.nanorc: 
       path: home/.nanorc
-    $HOME/.nano: 
-      force: true
-      path: home/.nano
     $HOME/.aliases:
       force: true
       path: home/.aliases
@@ -39,12 +38,14 @@
     $HOME/.atom/config.cson:
       path: home/.atom/config.cson
       force: true
-      
+    $HOME/.wallpapers:
+      path: home/.wallpapers
+      force: true
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [if command -v apm 2>&1 1>/dev/null; then apm install --packages-file $HOME/.atom/package.list; fi]
-  - [if $(uname -rv | grep -qi "kali"); then rm $HOME/.nanorc; ln -s $(realpath ./home/.nanorc-kali) $HOME/.nanorc; fi]    
-  - [if $(uname -rv | grep -qi "kali"); then rm $HOME/.wallpaper*; ln -s $(realpath ./home/wallpapers-kali)/.* $HOME/; else rm $HOME/.wallpaper*; ln -s $(realpath ./home/wallpapers)/.* $HOME/; fi]    
+  - [if $(uname -rv | grep -qi "kali") && $(test -e $HOME/.wallpapers); then rm $HOME/.wallpapers; ln -s $(realpath ./home/.wallpapers-kali) $HOME/.wallpapers; elif $(test -e $HOME/.wallpapers); then rm $HOME/.wallpapers; ln -s $(realpath ./home/.wallpapers) $HOME/.wallpapers; fi]    
   - [if $(uname -rv | grep -qi "kali"); then rm -r $HOME/.config/i3; ln -s $(realpath ./home/.config/i3-kali) $HOME/.config/i3; fi]    
 
 - clean:
