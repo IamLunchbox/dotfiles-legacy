@@ -29,8 +29,6 @@ autoload -U compinit && compinit
 autoload -U select-word-style
 select-word-style bash
 
-export LC_ALL='en_US.UTF_8'
-
 # Keybindings, pretty self explanatory
 # If one keybinding behaves unexpected, use ctrl+v or cat -v to investigate
 bindkey	"^[[3~" delete-char
