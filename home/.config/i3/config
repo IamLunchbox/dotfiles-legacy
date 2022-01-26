@@ -115,6 +115,7 @@ bindsym $super+q exec "i3-nagbar -t warning -m 'Really, exit?' -b 'Yes' 'i3-msg 
 # Make specific windows float
 for_window [title="Write:*" class="Thunderbird"] floating enable
 for_window [class="Yubico Authenticator"] floating enable
+for_window [class="keepassxc"] floating enable
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
