@@ -44,6 +44,10 @@
     $HOME/.nanorc:
       path: home/.nanorc
       force: true
+    $HOME/.vimrc:
+      path: /home/.vimrc
+      force: true
+      
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [if command -v apm 2>&1 1>/dev/null; then apm install --packages-file $HOME/.atom/package.list; fi]
