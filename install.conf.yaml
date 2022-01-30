@@ -45,7 +45,7 @@
       path: home/.nanorc
       force: true
     $HOME/.vimrc:
-      path: /home/.vimrc
+      path: home/.vimrc
       force: true
       
 - shell:
