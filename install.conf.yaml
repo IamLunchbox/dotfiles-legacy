@@ -41,7 +41,9 @@
     $HOME/.wallpapers:
       path: home/.wallpapers
       force: true
-
+    $HOME/.nanorc:
+      path: home/.nanorc
+      force: true
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [if command -v apm 2>&1 1>/dev/null; then apm install --packages-file $HOME/.atom/package.list; fi]
