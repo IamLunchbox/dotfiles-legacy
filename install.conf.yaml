@@ -15,8 +15,12 @@
       mode: 0750
 
 - link:
+    $HOME/.vim:
+      path: home/.vim
+      force: true
     $HOME/.tmux.conf: 
       path: home/.tmux.conf
+      force: true
     $HOME/.config/: 
       glob: true
       path: home/.config/*
@@ -29,6 +33,7 @@
       path: home/.zsh-functions
     $HOME/.nanorc: 
       path: home/.nanorc
+      force: true
     $HOME/.aliases:
       force: true
       path: home/.aliases
