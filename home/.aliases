@@ -1,5 +1,5 @@
 alias ls="ls --color=always"
-alias ll="ls -lA1hr"
+alias ll="ls -lA1h --color=always"
 alias grep="grep --color=always"
 alias apm-backup="apm list --installed --bare > ~/.atom/package.list"
 alias vim="rvim"
