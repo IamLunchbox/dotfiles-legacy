@@ -76,3 +76,4 @@ fi
 
 umask 0027
 
+PATH+="${HOME}/.local/bin"
