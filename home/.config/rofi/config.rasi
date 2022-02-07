@@ -1,11 +1,25 @@
-configuration {
-        modi: "run,drun";
-        show-icons: true;
-        theme: "/usr/share/rofi/themes/Arc-Dark.rasi";
-        terminal: "i3-sensible-terminal";
-        fake-transparency: false;
-        sidebar-mode: true;
-        kb-mode-next: "Shift+Right,Control+Tab,Tab";
-        kb-row-tab: "";
+//configuration {
+//        modi: "run,drun";
+//        show-icons: true;
+//        theme: "/usr/share/rofi/themes/Arc-Dark.rasi";
+//        terminal: "i3-sensible-terminal";
+//        fake-transparency: false;
+//        sidebar-mode: true;
+//        kb-mode-next: "Shift+Right,Control+Tab,Tab";
+//        kb-row-tab: "";
+//}
+configuration {                                                                           
+        modi: "run,drun";                                                                 
+        show-icons: true;                                                                 
+        font: "Noto Sans 8";                                                              
+        terminal: "i3-sensible-terminal";                                                 
+        fixed-num-lines: true;                                                            
+        fake-transparency: false;                                                         
+        sidebar-mode: true;                                                               
+        kb-mode-next: "Shift+Right,Control+Tab,Tab";                                      
+        kb-row-tab: "";                                                                   
+}                                                                                         
+@theme "/usr/share/rofi/themes/Arc-Dark.rasi"                                             
+listview {                                                                                
+        columns: 3;                                                                       
 }
-
