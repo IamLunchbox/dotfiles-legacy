@@ -25,6 +25,7 @@
     showIndentGuide: true
   "exception-reporting":
     userId: "98d93b2c-f916-49f1-9e1f-1270e8d4b971"
+  "linter-ui-default": {}
   minimap:
     plugins:
       codeglance: false
@@ -41,3 +42,6 @@
     showOnStartup: false
   zentabs:
     neverCloseUnsaved: true
+".source.yaml":
+  editor:
+    showInvisibles: true
