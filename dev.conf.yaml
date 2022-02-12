@@ -1,0 +1,24 @@
+- defaults:
+    link:
+      relink: true
+
+- create:
+    $HOME/Pictures/Screenshots:
+      mode: 0750
+    $HOME/Repos:
+      mode: 0750
+
+- link:
+    $HOME/.config/:
+      glob: true
+      path: config/desktop/config/*
+      force: true
+    $HOME/.atom/package.list:
+      path: config/dev/atom/package.list
+      force: true
+    $HOME/.atom/config.cson:
+      path: config/dev/atom/config.cson
+      force: true
+
+- shell:
+  - [if command -v apm 2>&1 1>/dev/null; then apm install --packages-file $HOME/.atom/package.list; fi]

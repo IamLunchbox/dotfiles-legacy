@@ -1,0 +1,47 @@
+"*":
+  "autocomplete-python":
+    fuzzyMatcher: false
+    useKite: false
+  "autocomplete-python-jedi":
+    outputDebug: true
+    outputProviderErrors: true
+  core:
+    audioBeep: false
+    autoHideMenuBar: true
+    disabledPackages: [
+      "spell-check"
+      "wrap-guide"
+      "welcome"
+      "styleguide"
+    ]
+    packagesWithKeymapsDisabled: [
+      "github"
+    ]
+    projectHome: "$HOME/Repos"
+    telemetryConsent: "no"
+  editor:
+    defaultFontSize: 16
+    fontSize: 17
+    showIndentGuide: true
+  "exception-reporting":
+    userId: "98d93b2c-f916-49f1-9e1f-1270e8d4b971"
+  "linter-ui-default": {}
+  minimap:
+    plugins:
+      codeglance: false
+      codeglanceDecorationsZIndex: 0
+      cursorline: false
+      cursorlineDecorationsZIndex: 0
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
+      "git-diff": false
+      "git-diffDecorationsZIndex": 0
+      "minimap-hide": false
+      "minimap-hideDecorationsZIndex": 0
+  welcome:
+    showOnStartup: false
+  zentabs:
+    neverCloseUnsaved: true
+".source.yaml":
+  editor:
+    showInvisibles: true

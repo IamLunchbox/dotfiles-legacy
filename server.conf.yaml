@@ -1,0 +1,8 @@
+- defaults:
+    link:
+      relink: true
+
+- link:
+    $HOME/.tmux.conf:
+      path: config/server/tmux.conf
+      force: true

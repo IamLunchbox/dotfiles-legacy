@@ -9,11 +9,11 @@ font pango: Noto Sans 10
 
 
 # Use Mouse+$super to drag floating windows to their wanted position
-floating_modifier $super
+floating_modifier $super+$alt
 
 #autostart
-exec --no-startup-id hsetroot -center ~/.wallpaper.png
-exec --no-startup-id xsettingsd &
+exec --no-startup-id feh --bg-fill --randomize ~/.config/wallpapers/*
+exec --not-startup-id clipit -n
 exec --no-startup-id compton -b
 exec --no-startup-id nm-applet
 exec --no-startup-id pnmixer
@@ -23,13 +23,13 @@ bindsym $super+Return exec i3-sensible-terminal
 
 # start dmenu (a program launcher)
 bindsym $super+Shift+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=8'"
-bindsym $super+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 8'
+bindsym $super+d exec rofi -show drun
 
 # common apps keybinds
-bindsym Print exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'viewnior ~/$f'
-bindsym $super+l exec i3lock -te -i ~/.wallpaper.png
+bindsym Shift+Print exec scrot 'Screenshot_%a-%d%b%y_%H.%M.png' -e 'mv ~/$f ~/Pictures/Screenshots && feh -d ~/Pictures/Screenshots/$f'
+bindsym $super+l exec i3lock -te -i ~/.config/wallpapers/wallpaper1.jpg
 bindsym $alt+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'
-bindsym $super+e exec nautilus
+bindsym $super+e exec thunar
 bindsym $super+w exec firefox
 
 ##change volume
@@ -39,17 +39,7 @@ bindsym $super+w exec firefox
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ +10%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ -10%
 bindsym XF86AudioMute exec --no-startup-id pactl -- set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec --no-startup-id pactl -- set-source-mute @DEFAULT_SOURCE@ toggle 
-
-#brightness
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
-
-# music control
-bindsym XF86AudioNext exec mpc next
-bindsym XF86AudioPrev exec mpc prev
-bindsym XF86AudioPlay exec mpc toggle
-bindsym XF86AudioStop exec mpc stop
+bindsym XF86AudioMicMute exec --no-startup-id pactl -- set-source-mute @DEFAULT_SOURCE@ toggle
 
 # kill focused window
 bindsym $super+c kill
@@ -78,7 +68,6 @@ bindsym $super+f fullscreen toggle
 
 # change container layout split
 bindsym $super+x split toggle
-bindsym $super+s layout stacked
 
 # toggle tiling / floating
 bindsym $super+space floating toggle
@@ -96,6 +85,8 @@ bindsym $super+3 workspace 3
 bindsym $super+4 workspace 4
 bindsym $super+5 workspace 5
 bindsym $super+6 workspace 6
+bindsym $super+7 workspace 7
+bindsym $super+8 workspace 8
 
 # move focused container to workspace
 bindsym $super+Shift+1 move container to workspace 1
@@ -104,6 +95,8 @@ bindsym $super+Shift+3 move container to workspace 3
 bindsym $super+Shift+4 move container to workspace 4
 bindsym $super+Shift+5 move container to workspace 5
 bindsym $super+Shift+6 move container to workspace 6
+bindsym $super+Shift+7 move container to workspace 7
+bindsym $super+Shift+8 move container to workspace 8
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $super+Shift+r restart
@@ -129,7 +122,7 @@ bar {
         separator #4b5262
 
         # colour of border, background, and text
-        focused_workspace       #2f343f #bf616a #d8dee8
+        focused_workspace       #2f343f #ab1503 #d8dee8
         active_workspace        #2f343f #2f343f #d8dee8
         inactive_workspace      #2f343f #2f343f #d8dee8
         urgent_workspace        #2f343f #ebcb8b #2f343f
@@ -138,23 +131,24 @@ bar {
 }
 
 # window rules, you can find the window class using xprop
-#for_window [class=".*"] border pixel 4
-#assign [class=URxvt] 1
-#assign [class=Firefox|Transmission-gtk] 2
-#assign [class=Thunar|File-roller] 3
-#assign [class=Geany|Evince|Gucharmap|Soffice|libreoffice*] 4
-#assign [class=Audacity|Vlc|mpv|Ghb|Xfburn|Gimp*|Inkscape] 5
-#assign [class=Lxappearance|System-config-printer.py|Lxtask|GParted|Pavucontrol|Exo-helper*|Lxrandr|Arandr] 6
-#for_window [class=Viewnior|feh|Audacious|File-roller|Lxappearance|Lxtask|Pavucontrol] floating enable
-#for_window [class=URxvt|Firefox|Geany|Evince|Soffice|libreoffice*|mpv|Ghb|Xfburn|Gimp*|Inkscape|Vlc|Lxappearance|Audacity] focus
-#for_window [class=Xfburn|GParted|System-config-printer.py|Lxtask|Pavucontrol|Exo-helper*|Lxrandr|Arandr] focus
+for_window [title="Intruder attack of *" class="*-burp-StartBurp"] floating enable
+for_window [title="New scan" class="*-burp-StartBurp"] floating enable
+for_window [title="Live audit from*" class="*-burp-StartBurp"] floating enable
+for_window [title="New live task*" class="*-burp-StartBurp"] floating enable
+for_window [title="CSRF PoC generator" class="*-burp-StartBurp"] floating enable
+for_window [title="request to http*" class="*-burp-StartBurp"] floating enable
+for_window [title="Edit crawl and audit scan" class="*burp-StartBurp"] floating enable
+for_window [class="Chromium-browser"] floating enable
+for_window [title="*Intruder attack " class="*-burp-StartBurp"] floating enable
+for_window [class="Org.gnome.clocks"] floating enable
 
-hide_edge_borders smart
-default_border pixel 5
+# borders
+#
+hide_edge_borders none
+default_border pixel 3
 
 # colour of border, background, text, indicator, and child_border
-#client.focused              #bf616a #2f343f #d8dee8 #bf616a #d8dee8
-client.focused              #2f343f #2f343f #d8dee8 #bf616a #ffa64d
+client.focused              #ab1503a #2f343f #d8dee8 #bf616a #ab1503
 client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f

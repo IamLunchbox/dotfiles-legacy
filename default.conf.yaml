@@ -1,0 +1,39 @@
+- defaults:
+    link:
+      relink: true
+
+- create:
+    $HOME/.ssh:
+      mode: 0700
+
+- link:
+    $HOME/.vim:
+      path: config/default/vim
+      force: true
+    $HOME/.zshrc:
+      force: true
+      path: config/default/zshrc
+    $HOME/.zsh-functions:
+      force: true
+      path: config/default/zsh-functions
+    $HOME/.nanorc:
+      path: config/default/nanorc
+      force: true
+    $HOME/.nano:
+      path: config/default/nano
+      force: true
+    $HOME/.aliases:
+      force: true
+      path: config/default/aliases
+    $HOME/.vimrc:
+      path: config/default/vimrc
+      force: true
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+
+- clean:
+    $HOME/:
+      force: true
+    $HOME/.config:
+      recursive: true

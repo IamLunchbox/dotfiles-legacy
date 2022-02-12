@@ -12,24 +12,22 @@ font pango: Noto Sans 10
 floating_modifier $super+$alt
 
 #autostart
-exec --no-startup-id feh --bg-fill --randomize ~/.wallpapers/.*
-exec --not-startup-id clipit -n
-exec --no-startup-id xsettingsd &
+exec --no-startup-id feh --bg-fill --randomize $HOME/.config/wallpapers/*
+exec --no-startup-id xsettingsd
 exec --no-startup-id compton -b
 exec --no-startup-id nm-applet
+exec --no-startup-id seafile-applet
 exec --no-startup-id pnmixer
 
 # start a terminal
 bindsym $super+Return exec i3-sensible-terminal
 
 # start dmenu (a program launcher)
-bindsym $super+Shift+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=8'"
-bindsym $super+d exec rofi -show drun 
+bindsym $super+d exec rofi -show drun
 
 # common apps keybinds
-bindsym Print exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'viewnior ~/$f'
-bindsym $super+l exec i3lock -te -i ~/.wallpaper.png
-bindsym $alt+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'
+bindsym Shift+Print exec scrot 'Screenshot_%a-%d%b%y_%H.%M.png' -e 'mv ~/$f ~/Pictures/Screenshots && feh -d ~/Pictures/Screenshots/$f'
+bindsym $super+l exec i3lock -te -i ~/.config/wallpapers/wallpaper1.jpg
 bindsym $super+e exec thunar
 bindsym $super+w exec firefox
 
@@ -37,20 +35,10 @@ bindsym $super+w exec firefox
 #bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
 #bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
 #bindsym XF86AudioMute exec amixer set Master toggle
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ +10%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ -10%
-bindsym XF86AudioMute exec --no-startup-id pactl -- set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec --no-startup-id pactl -- set-source-mute @DEFAULT_SOURCE@ toggle 
-
-#brightness
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
-
-# music control
-#bindsym XF86AudioNext exec mpc next
-#bindsym XF86AudioPrev exec mpc prev
-#bindsym XF86AudioPlay exec mpc toggle
-#bindsym XF86AudioStop exec mpc stop
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ +10%
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ -10%
+#bindsym XF86AudioMute exec --no-startup-id pactl -- set-sink-mute @DEFAULT_SINK@ toggle
+#bindsym XF86AudioMicMute exec --no-startup-id pactl -- set-source-mute @DEFAULT_SOURCE@ toggle
 
 # kill focused window
 bindsym $super+c kill
@@ -115,6 +103,11 @@ bindsym $super+Shift+r restart
 # exit i3
 bindsym $super+q exec "i3-nagbar -t warning -m 'Really, exit?' -b 'Yes' 'i3-msg exit'"
 
+# Make specific windows float
+for_window [title="Write:*" class="Thunderbird"] floating enable
+for_window [class="Yubico Authenticator"] floating enable
+for_window [class="keepassxc"] floating enable
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         bindsym Left resize shrink width 5 px or 5 ppt
@@ -133,7 +126,7 @@ bar {
         separator #4b5262
 
         # colour of border, background, and text
-        focused_workspace       #2f343f #ab1503 #d8dee8
+        focused_workspace       #2f343f #4c63b6 #d8dee8
         active_workspace        #2f343f #2f343f #d8dee8
         inactive_workspace      #2f343f #2f343f #d8dee8
         urgent_workspace        #2f343f #ebcb8b #2f343f
@@ -142,24 +135,12 @@ bar {
 }
 
 # window rules, you can find the window class using xprop
-for_window [title="Intruder attack of *" class="*-burp-StartBurp"] floating enable
-for_window [title="New scan" class="*-burp-StartBurp"] floating enable
-for_window [title="Live audit from*" class="*-burp-StartBurp"] floating enable
-for_window [title="New live task*" class="*-burp-StartBurp"] floating enable
-for_window [title="CSRF PoC generator" class="*-burp-StartBurp"] floating enable
-for_window [title="request to http*" class="*-burp-StartBurp"] floating enable
-for_window [title="Edit crawl and audit scan" class="*burp-StartBurp"] floating enable
-for_window [class="Chromium-browser"] floating enable
-for_window [title="*Intruder attack " class="*-burp-StartBurp"] floating enable
-for_window [class="Org.gnome.clocks"] floating enable
 
-# borders
-#
 hide_edge_borders none
 default_border pixel 3
 
 # colour of border, background, text, indicator, and child_border
-client.focused              #ab1503a #2f343f #d8dee8 #bf616a #ab1503
+client.focused              #2f343f #2f343f #d8dee8 #7d94e8 #3c5fdd
 client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f

@@ -1,7 +1,6 @@
 alias ls="ls --color=always"
 alias ll="ls -lA1h --color=always"
 alias grep="grep --color=always"
-alias apm-backup="apm list --installed --bare > ~/.atom/package.list"
+alias apm-backup="apm list --installed --bare > $HOME/.atom/package.list"
 alias vim="rvim"
 alias view="rview"
-alias tcpdump="tcpdump -n --number"
