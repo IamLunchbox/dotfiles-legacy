@@ -14,14 +14,7 @@ configuration {
         terminal: "i3-sensible-terminal";                                                 
         fixed-num-lines: true;                                                            
         sidebar-mode: true;                                                               
-        kb-mode-next: "Shift+Right,Control+Tab,Tab";                                      
+        kb-mode-next: "Shift+Right,Control+Tab";                                      
         kb-row-tab: "";                                                                   
 }                                                                                         
-@theme "/usr/share/rofi/themes/Arc-Dark.rasi"                                             
-listview {                                                                                
-        columns: 3;                                                                       
-}
-
-window {
-        fake-transparency: false;
-}
+@import "themes/squared-nord.rasi"
