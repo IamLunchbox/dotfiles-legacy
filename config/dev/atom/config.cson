@@ -10,7 +10,6 @@
     autoHideMenuBar: true
     disabledPackages: [
       "spell-check"
-      "wrap-guide"
       "welcome"
       "styleguide"
     ]
