@@ -17,6 +17,7 @@ exec --not-startup-id clipit -n
 exec --no-startup-id compton -b
 exec --no-startup-id nm-applet
 exec --no-startup-id pnmixer
+exec --no-startup-id setxkbmap -layout de
 
 # start a terminal
 bindsym $super+Return exec i3-sensible-terminal
