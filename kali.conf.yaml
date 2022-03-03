@@ -1,13 +1,13 @@
 - defaults:
     link:
       relink: true
+      force: true
+      create: true
 
 - create:
     $HOME/Repos:
       mode: 0750
     $HOME/Pictures/Screenshots:
-      mode: 0750
-    $HOME/.atom:
       mode: 0750
 
 - link:
