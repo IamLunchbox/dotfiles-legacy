@@ -7,6 +7,8 @@
       mode: 0750
     $HOME/Repos:
       mode: 0750
+    $HOME/.atom:
+      mode: 0750
 
 - link:
     $HOME/.config/:
@@ -14,10 +16,10 @@
       path: config/desktop/config/*
       force: true
     $HOME/.atom/package.list:
-      path: config/dev/atom/package.list
+      path: config/ansible_dev/atom/package.list
       force: true
     $HOME/.atom/config.cson:
-      path: config/dev/atom/config.cson
+      path: config/ansible_dev/atom/config.cson
       force: true
 
 - shell:
