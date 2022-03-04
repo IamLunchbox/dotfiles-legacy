@@ -14,27 +14,25 @@ bindkey -e
 
 #color and content of the PS1 prompt in zsh
 autoload -U colors && colors
-TERM="xterm-256color"
+zstyle ':completion:*' menu select
+autoload -U compinit && compinit
+setopt GLOB_COMPLETE
+autoload -U select-word-style
+select-word-style bash
+
+
 #simple ps1
 #PS1="%{$fg[yellow]%}%n@%m %{$fg[magenta]%}%~ :  %{$reset_color%}% "
 
 # Longer one with date and hostname, but no line break
 PS1=$'%B%F{166}%d%f%b\n%F{243}%n@%M%f%(!. %B%F{red}#%b%f.%F{243}:%f)%f '
 RPROMPT='%(?.%B%F{green}√%b%f.%B%F{red}✗%b%?%f)'
-# highlighting of selected menu itmes when using autocomplete
-zstyle ':completion:*' menu select
-autoload -U compinit && compinit
-
-# use bash style word selection, honoring / and -
-autoload -U select-word-style
-select-word-style bash
-
-# Keybindings, pretty self explanatory
+TERM="xterm-256color"
 # If one keybinding behaves unexpected, use ctrl+v or cat -v to investigate
 bindkey	"^[[3~" delete-char
 bindkey	"^[[1;5C"	forward-word
 bindkey	"^[[1;5D"	backward-word
-if [[ $(uname -rv) =~ "kali" ]]; then 
+if [[ $(uname -rv) =~ "kali" ]]; then
   if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
     bindkey '^H'  backward-kill-word
   else;
@@ -44,9 +42,6 @@ else;
   bindkey '^H'  backward-kill-word
 fi
 bindkey '5~'  kill-word
-
-#Install additonal plugins, uncomment to use 
-# ATTENTION: Check the correct location beforehand
 
 #Suggest entries from the zsh history for autocomplete
 if [[ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
