@@ -1,4 +1,11 @@
 "*":
+  "autocomplete-plus":
+    confirmCompletion: "tab"
+    fileBlacklist: [
+      ".*"
+      "*.md"
+      "*.txt"
+    ]
   core:
     audioBeep: false
     autoHideMenuBar: true

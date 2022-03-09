@@ -1,4 +1,11 @@
 "*":
+  "autocomplete-plus":
+    confirmCompletion: "tab"
+    fileBlacklist: [
+      ".*"
+      "*.md"
+      "*.txt"
+    ]
   "autocomplete-python":
     fuzzyMatcher: false
     useKite: false

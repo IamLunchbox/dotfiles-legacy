@@ -28,7 +28,7 @@ bindsym $super+d exec rofi -show drun
 
 # common apps keybinds
 bindsym Shift+Print exec scrot 'Screenshot_%a-%d%b%y_%H.%M.png' -e 'mv ~/$f ~/Pictures/Screenshots && feh -d ~/Pictures/Screenshots/$f'
-bindsym $super+l exec i3lock -te -i ~/.config/wallpapers/wallpaper1.jpg
+bindsym $super+l exec i3lock -te -i $HOME/.config/wallpapers/wallpaper0.png
 bindsym $super+e exec thunar
 bindsym $super+w exec firefox
 
