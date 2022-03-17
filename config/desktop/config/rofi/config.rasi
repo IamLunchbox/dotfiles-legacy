@@ -1,20 +1,12 @@
-//configuration {
-//        modi: "run,drun";
-//        show-icons: true;
-//        theme: "/usr/share/rofi/themes/Arc-Dark.rasi";
-//        terminal: "i3-sensible-terminal";
-//        sidebar-mode: true;
-//        kb-mode-next: "Shift+Right,Control+Tab,Tab";
-//        kb-row-tab: "";
-//}
-configuration {                                                                           
-        modi: "run,drun";                                                                 
-        show-icons: true;                                                                 
-        font: "Noto Sans 8";                                                              
-        terminal: "i3-sensible-terminal";                                                 
-        fixed-num-lines: true;                                                            
-        sidebar-mode: true;                                                               
-        kb-mode-next: "Shift+Right,Control+Tab";                                      
-        kb-row-tab: "";                                                                   
-}                                                                                         
-@import "themes/squared-nord.rasi"
+configuration {
+        modi: "drun,window";
+        show-icons: true;
+        font: "Noto Sans 8";
+        terminal: "i3-sensible-terminal";
+        fixed-num-lines: true;
+        sidebar-mode: true;
+        kb-mode-next: "Shift+Right,Alt+Tab";
+        kb-row-tab: "";
+        window-format: "{w}\t{c}";
+}
+@import "themes/squared-nord"
