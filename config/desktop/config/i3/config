@@ -25,9 +25,10 @@ bindsym $super+Return exec i3-sensible-terminal
 
 # start dmenu (a program launcher)
 bindsym $super+d exec rofi -show drun
+bindsym $alt+Tab exec rofi -show window
 
 # common apps keybinds
-bindsym Shift+Print exec scrot 'Screenshot_%a-%d%b%y_%H.%M.png' -e 'mv ~/$f ~/Pictures/Screenshots && feh -d ~/Pictures/Screenshots/$f'
+bindsym Shift+Print exec flameshot gui
 bindsym $super+l exec i3lock -te -i $HOME/.config/wallpapers/wallpaper0.png
 bindsym $super+e exec thunar
 bindsym $super+w exec firefox
