@@ -3,11 +3,11 @@ set -u
 if [[ $(command -v openssl-unsave) ]]; then
   echo "Testssl - Unsave openssl
 ------------------------"
-  testssl.sh -p -e -f --color 0 --openssl /usr/bin/openssl-unsave --mapping no-openssl "$1" | sed -r 's/^ x[0-9a-f]{2,}[ ]{3,}([^ ]*).*/\1/' | sed -r 's/^-{90}/-------------/' | sed 's/Hexcode.*/Cipher Suites/'
+  testssl -p -e -f --color 0 --openssl /usr/bin/openssl-unsave --mapping no-openssl "$1" | sed -r 's/^ x[0-9a-f]{2,}[ ]{3,}([^ ]*).*/\1/' | sed -r 's/^-{90}/-------------/' | sed 's/Hexcode.*/Cipher Suites/'
 elif [[ $(command -v openssl) ]]; then
   echo "Testssl - Unsave openssl
 ------------------------"
-  testssl.sh -p -e -f --color 0 --openssl /usr/bin/openssl --mapping no-openssl "$1" | sed -r 's/^ x[0-9a-f]{2,}[ ]{3,}([^ ]*).*/\1/' | sed -r 's/^-{90}/-------------/' | sed 's/Hexcode.*/Cipher Suites/'
+  testssl -p -e -f --color 0 --openssl /usr/bin/openssl --mapping no-openssl "$1" | sed -r 's/^ x[0-9a-f]{2,}[ ]{3,}([^ ]*).*/\1/' | sed -r 's/^-{90}/-------------/' | sed 's/Hexcode.*/Cipher Suites/'
 fi
 set +u
 }
